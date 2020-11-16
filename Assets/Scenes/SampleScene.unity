@@ -315,6 +315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827921749}
+  - component: {fileID: 827921750}
   m_Layer: 0
   m_Name: CarsHandler
   m_TagString: Untagged
@@ -330,12 +331,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827921748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.175, y: 4.933, z: -5.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1668550805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &827921750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827921748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4f0b1ee11133b48b2882ca30b7b38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefab: {fileID: 7603315257349592062, guid: 7fda82da9cbfb264684fcaf79cc7b136,
+    type: 3}
+  timeBetweenSpawns: 3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.77, y: 4.42, z: -18.67}
+  m_LocalPosition: {x: 4.38, y: 3.57, z: -17.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -426,10 +442,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1668550805}
     m_Modifications:
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_RayLength
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971850, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: TakeActionsBetweenDecisions
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971850, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: DecisionPeriod
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971851, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_BehaviorName
+      value: CarPooling
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971851, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971851, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7567687788243971853, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.364174
+      value: -8.15
       objectReference: {fileID: 0}
     - target: {fileID: 7567687788243971853, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
@@ -486,11 +532,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: Person
       objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971857, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cfbece82bf36b4499f2e8fcc34c3b33, type: 3}
 --- !u!4 &1465075362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7567687788243971853, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+    type: 3}
+  m_PrefabInstance: {fileID: 1465075361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1465075363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7567687788243971856, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+    type: 3}
+  m_PrefabInstance: {fileID: 1465075361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1465075364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465075363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f448c02869f7664e99cc4badd4a5d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+  rb: {fileID: 1465075365}
+  carHandler: {fileID: 827921750}
+  jumpForce: 7
+  maxVelocityMagnitude: 4
+--- !u!54 &1465075365 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7567687788243971857, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
     type: 3}
   m_PrefabInstance: {fileID: 1465075361}
   m_PrefabAsset: {fileID: 0}

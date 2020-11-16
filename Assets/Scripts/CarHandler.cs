@@ -4,55 +4,58 @@ using UnityEngine;
 
 public class CarHandler : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Referenties")]
     [SerializeField] private Car carPrefab = null;
 
-    [Header("Settings")]
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float secondsBetweenSpawns = 2f;
-    public GameObject cars;
-
+    [Header("Instellingen")]
+    [SerializeField] private float carSpawnDelay = 3f;
 
     private float spawnTimer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        cars = transform.Find("Car").gameObject;
-    }
+    private readonly List<Car> cars = new List<Car>();
+
 
     // Update is called once per frame
     void Update()
     {
-        //RemoveOldCar();
-        SpawNewCar();
+        RemoveOldCars();
+        SpawnNewCars();
     }
 
-    
-    private void RemoveOldCar()
+    public void ResetCars()
     {
-        if (true)
+        foreach (var car in cars)
         {
-
+            Destroy(car.gameObject);
         }
-        Destroy(carPrefab.gameObject);
+        cars.Clear();
+
+        spawnTimer = 0f;
     }
-    private void SpawNewCar()
+
+
+    public void RemoveOldCars()
+    {
+        for (int i = cars.Count - 1; i >= 0 ; i--)
+        {
+            if (cars[i].transform.position.x < -15f)
+            {
+                Destroy(cars[i].gameObject);
+                cars.RemoveAt(i);
+            }
+        }
+    }
+
+    public void SpawnNewCars()
     {
         spawnTimer -= Time.deltaTime;
-        if (spawnTimer > 0f) { return; }
-
-        GameObject newCar = Instantiate(cars.gameObject);
-        newCar.transform.localPosition = randomPosition(1f);
-
-
+        if (spawnTimer > 0f)
+        { 
+            return; 
+        }
+        Car carObject = Instantiate(carPrefab, transform.position, Quaternion.identity);
+        cars.Add(carObject);
+        spawnTimer = carSpawnDelay;
     }
 
-    public Vector3 randomPosition(float up)
-    {
-        float x = Random.Range(-9.75f, 9.75f);
-        float z = Random.Range(-9.75f, 9.75f);
-
-        return new Vector3(x, up, z);
-    }
 }
