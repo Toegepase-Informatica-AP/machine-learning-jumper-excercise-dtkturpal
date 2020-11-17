@@ -1,0 +1,23 @@
+{
+    "CarPooling": {
+        "checkpoints": [
+            {
+                "steps": 1924,
+                "file_path": "results\\jumper05\\CarPooling\\CarPooling-1924.nn",
+                "reward": 0.033333333830038704,
+                "creation_time": 1605570597.9814377
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1924,
+            "file_path": "results\\jumper05\\CarPooling.nn",
+            "reward": 0.033333333830038704,
+            "creation_time": 1605570597.9814377
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.1.0",
+        "mlagents_version": "0.20.0",
+        "tensorflow_version": "2.3.1"
+    }
+}

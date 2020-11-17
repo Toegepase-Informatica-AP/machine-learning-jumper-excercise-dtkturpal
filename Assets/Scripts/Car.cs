@@ -9,7 +9,7 @@ public class Car : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         transform.Translate(new Vector3(-speed * Time.deltaTime, 0f, 0f), Space.World);
     }

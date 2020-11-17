@@ -45,9 +45,19 @@ public class Person : Agent
 
     private void OnTriggerEnter(Collider other)
     {
-        AddReward(-0.1f);
-        EndEpisode();
+        if (other.transform.CompareTag("Car") || other.transform.CompareTag("Wall"))
+        {
+            AddReward(-0.1f);
+            Debug.Log("OnTrigger triggered");
+            EndEpisode();
+        }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    AddReward(-0.1f);
+    //    Debug.Log("OnTrigger triggered");
+    //    EndEpisode();
+    //}
 
     public override void Heuristic(float[] actionsOut)
     {
