@@ -29,7 +29,7 @@ behaviors:
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 50000
-    max_steps: 50000000
+    max_steps: 100000000
     time_horizon: 64
     summary_freq: 10000
     threaded: true

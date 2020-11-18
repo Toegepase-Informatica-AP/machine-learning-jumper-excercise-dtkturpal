@@ -558,7 +558,17 @@ PrefabInstance:
     - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_RayLength
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_StartVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_EndVerticalOffset
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7567687788243971850, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
@@ -1146,7 +1156,17 @@ PrefabInstance:
     - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_RayLength
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_StartVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_EndVerticalOffset
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7567687788243971850, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
@@ -1682,7 +1702,17 @@ PrefabInstance:
     - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_RayLength
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_StartVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_EndVerticalOffset
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7567687788243971850, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
@@ -1709,6 +1739,12 @@ PrefabInstance:
       propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971851, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 5d5e1c1248c8fcc4a8311c27d5fce5d8,
+        type: 3}
     - target: {fileID: 7567687788243971853, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2236,7 +2272,17 @@ PrefabInstance:
     - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_RayLength
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_StartVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_EndVerticalOffset
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7567687788243971850, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
@@ -2454,7 +2500,17 @@ PrefabInstance:
     - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_RayLength
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_StartVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_EndVerticalOffset
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7567687788243971850, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
@@ -3046,7 +3102,17 @@ PrefabInstance:
     - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_RayLength
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_StartVerticalOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971848, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_EndVerticalOffset
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7567687788243971850, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
@@ -3073,6 +3139,12 @@ PrefabInstance:
       propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7567687788243971851, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 5d5e1c1248c8fcc4a8311c27d5fce5d8,
+        type: 3}
     - target: {fileID: 7567687788243971853, guid: 8cfbece82bf36b4499f2e8fcc34c3b33,
         type: 3}
       propertyPath: m_LocalPosition.x
