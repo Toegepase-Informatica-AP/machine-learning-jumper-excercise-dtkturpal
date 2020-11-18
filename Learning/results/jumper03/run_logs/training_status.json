@@ -2,17 +2,17 @@
     "CarPooling": {
         "checkpoints": [
             {
-                "steps": 1664,
-                "file_path": "results\\jumper03\\CarPooling\\CarPooling-1664.nn",
+                "steps": 82134,
+                "file_path": "results\\jumper03\\CarPooling\\CarPooling-82134.nn",
                 "reward": null,
-                "creation_time": 1605570367.7840018
+                "creation_time": 1605726795.289836
             }
         ],
         "final_checkpoint": {
-            "steps": 1664,
+            "steps": 82134,
             "file_path": "results\\jumper03\\CarPooling.nn",
             "reward": null,
-            "creation_time": 1605570367.7840018
+            "creation_time": 1605726795.289836
         }
     },
     "metadata": {

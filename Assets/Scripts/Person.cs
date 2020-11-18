@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Person : Agent
 {
+    private const int yPos = 1;
     [Header("Referenties")]
     [SerializeField] private Rigidbody rb = null;
     [SerializeField] private CarHandler carHandler = null;
 
     [Header("Instellingen")]
     [SerializeField] private float jumpForce = 7f;
-    [SerializeField] private float maxVelocityMagnitude = 4f;
+    [SerializeField] private float maxVelocityMagnitude = 2f;
 
     private Vector3 startPosition;
 
@@ -29,16 +30,17 @@ public class Person : Agent
     }
     public override void OnActionReceived(float[] vectorAction)
     {
-        AddReward(0.1f);
-        if (Mathf.FloorToInt(vectorAction[0]) == 1)
+        if (Mathf.FloorToInt(vectorAction[0]) == 1 && transform.position.y <= yPos)
         {
+            AddReward(0.2f);
+
             Jump();
         }
     }
 
     public void Jump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocityMagnitude);
     }
 
@@ -47,7 +49,7 @@ public class Person : Agent
     {
         if (other.transform.CompareTag("Car") || other.transform.CompareTag("Wall"))
         {
-            AddReward(-0.1f);
+            AddReward(-0.5f);
             Debug.Log("OnTrigger triggered");
             EndEpisode();
         }

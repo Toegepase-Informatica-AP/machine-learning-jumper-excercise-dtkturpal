@@ -1,2 +1,3 @@
-model_checkpoint_path: "CarPooling-1344.ckpt"
-all_model_checkpoint_paths: "CarPooling-1344.ckpt"
+model_checkpoint_path: "CarPooling-500057.ckpt"
+all_model_checkpoint_paths: "CarPooling-499993.ckpt"
+all_model_checkpoint_paths: "CarPooling-500057.ckpt"
