@@ -73,6 +73,7 @@ public class Jumper : Agent
 
         else if (collidedObj.gameObject.CompareTag("Mover"))
         {
+            Debug.Log("Crashed: No Reward");
             AddReward(-1.0f);
             EndEpisode();
         }
@@ -80,8 +81,9 @@ public class Jumper : Agent
 
     private void OnTriggerEnter(Collider collidedObj)
     {
-        if (collidedObj.gameObject.CompareTag("score"))
+        if (collidedObj.gameObject.CompareTag("Coin"))
         {
+            Debug.Log("Rewarded: Coin");
             AddReward(0.1f);
         }
     }
