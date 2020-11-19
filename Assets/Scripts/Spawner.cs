@@ -12,6 +12,11 @@ public class Spawner : MonoBehaviour
     private Jumper jumper;
     private List<GameObject> spawnedObjects = new List<GameObject>();
 
+    private void Update()
+    {
+        RemoveOldCars();
+    }
+
     private void Awake()
     {
         jumper = GetComponentInChildren<Jumper>();
@@ -40,5 +45,17 @@ public class Spawner : MonoBehaviour
     {
         int randomIndex = UnityEngine.Random.Range(0, spawnableObjects.Count);
         return spawnableObjects[randomIndex];
+    }
+
+    public void RemoveOldCars()
+    {
+        for (int i = spawnedObjects.Count - 1; i >= 0; i--)
+        {
+            if (spawnedObjects[i].transform.position.z > 60f)
+            {
+                Destroy(spawnedObjects[i].gameObject);
+                spawnedObjects.RemoveAt(i);
+            }
+        }
     }
 }
