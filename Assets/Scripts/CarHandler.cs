@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject carObject;
+    [SerializeField] private List<GameObject> carObject;
 
     [Header("Instellingen")]
     [SerializeField] private float carSpawnDelayMin = 1f;
