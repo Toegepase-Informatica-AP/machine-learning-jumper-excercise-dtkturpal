@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - Finish Line
   - Car
+  - Coin
+  - Street
   layers:
   - Default
   - TransparentFX

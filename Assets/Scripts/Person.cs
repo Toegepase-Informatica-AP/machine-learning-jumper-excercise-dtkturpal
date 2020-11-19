@@ -1,65 +1,48 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.MLAgents;
 using UnityEngine;
 
 public class Person : Agent
 {
-    private const int yPos = 1;
     [Header("Referenties")]
-    [SerializeField] private Rigidbody rb = null;
-    [SerializeField] private CarHandler carHandler = null;
+    private Rigidbody rb;
 
     [Header("Instellingen")]
-    [SerializeField] private float jumpForce = 7f;
-    [SerializeField] private float maxVelocityMagnitude = 2f;
+    [SerializeField] private float jumpForce;
+    private bool jumpIsReady = true;
 
-    private Vector3 startPosition;
+    private Vector3 startingPosition;
+    public event Action OnReset;
+
 
     public override void Initialize()
     {
-        startPosition = transform.position;
+        rb = GetComponent<Rigidbody>();
+        startingPosition = transform.position;
     }
 
-    public override void OnEpisodeBegin()
+    private void FixedUpdate()
     {
-        transform.position = startPosition;
-        rb.velocity = Vector3.zero;
-
-        carHandler.ResetCars();
+        if (jumpIsReady)
+        {
+            RequestDecision();
+        }
     }
+
     public override void OnActionReceived(float[] vectorAction)
     {
-        if (Mathf.FloorToInt(vectorAction[0]) == 1 && transform.position.y <= yPos)
+        if (Mathf.FloorToInt(vectorAction[0]) == 1)
         {
-            AddReward(0.2f);
-
             Jump();
         }
     }
 
-    public void Jump()
+    public override void OnEpisodeBegin()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxVelocityMagnitude);
+        Reset();
     }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.CompareTag("Car") || other.transform.CompareTag("Wall"))
-        {
-            AddReward(-0.5f);
-            Debug.Log("OnTrigger triggered");
-            EndEpisode();
-        }
-    }
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    AddReward(-0.1f);
-    //    Debug.Log("OnTrigger triggered");
-    //    EndEpisode();
-    //}
 
     public override void Heuristic(float[] actionsOut)
     {
@@ -72,6 +55,43 @@ public class Person : Agent
         actionsOut[0] = 1;
     }
 
+    private void Jump()
+    {
+        if (jumpIsReady)
+        {
+            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.VelocityChange);
+            jumpIsReady = false;
+        }
+    }
 
+    private void Reset()
+    {
+        jumpIsReady = true;
+
+        transform.position = startingPosition;
+        rb.velocity = Vector3.zero;
+
+        OnReset?.Invoke();
+    }
+
+    private void OnCollisionEnter(Collision collidedObj)
+    {
+        if (collidedObj.gameObject.CompareTag("Street"))
+            jumpIsReady = true;
+
+        else if (collidedObj.gameObject.CompareTag("Car"))
+        {
+            AddReward(-1.0f);
+            EndEpisode();
+        }
+    }
+
+    private void OnTriggerEnter(Collider collidedObj)
+    {
+        if (collidedObj.gameObject.CompareTag("Coin"))
+        {
+            AddReward(0.1f);
+        }
+    }
 
 }

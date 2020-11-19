@@ -4,58 +4,47 @@ using UnityEngine;
 
 public class CarHandler : MonoBehaviour
 {
-    [Header("Referenties")]
-    [SerializeField] private Car carPrefab = null;
+    [SerializeField] private GameObject carObject;
 
     [Header("Instellingen")]
-    [SerializeField] private float carSpawnDelay = 3f;
+    [SerializeField] private float carSpawnDelayMin = 1f;
+    [SerializeField] private float carSpawnDelayMax = 3f;
 
-    private float spawnTimer;
+    private Person person;
+    private List<GameObject> carsList = new List<GameObject>();
 
-    private readonly List<Car> cars = new List<Car>();
 
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        RemoveOldCars();
-        SpawnNewCars();
+        person = GetComponentInChildren<Person>();
+        person.OnReset += DestroyAllSpawnedCars;
+
+        StartCoroutine(nameof(SpawnNewCars));
     }
 
-    public void ResetCars()
+    private IEnumerator SpawnNewCars()
     {
-        foreach (var car in cars)
+        var spawned = Instantiate(GetRandomCarFromList(), transform.position, transform.rotation, transform);
+        carsList.Add(spawned);
+
+        yield return new WaitForSeconds(Random.Range(carSpawnDelayMin, carSpawnDelayMax));
+        StartCoroutine(nameof(SpawnNewCars));
+    }
+    private GameObject GetRandomCarFromList()
+    {
+        int i = UnityEngine.Random.Range(0, carsList.Count);
+        return carsList[i];
+    }
+
+    private void DestroyAllSpawnedCars()
+    {
+        for (int i = carsList.Count - 1; i >= 0; i--)
         {
-            Destroy(car.gameObject);
-        }
-        cars.Clear();
-
-        spawnTimer = 0f;
-    }
-
-
-    public void RemoveOldCars()
-    {
-        for (int i = cars.Count - 1; i >= 0 ; i--)
-        {
-            if (cars[i].transform.position.x < -15f)
-            {
-                Destroy(cars[i].gameObject);
-                cars.RemoveAt(i);
-            }
+            Destroy(carsList[i]);
+            carsList.RemoveAt(i);
         }
     }
 
-    public void SpawnNewCars()
-    {
-        spawnTimer -= Time.deltaTime;
-        if (spawnTimer > 0f)
-        { 
-            return; 
-        }
-        Car carObject = Instantiate(carPrefab, transform.position, Quaternion.identity);
-        cars.Add(carObject);
-        spawnTimer = carSpawnDelay;
-    }
+
 
 }
