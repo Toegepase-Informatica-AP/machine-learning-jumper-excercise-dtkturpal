@@ -1,5 +1,5 @@
 behaviors:
-  Obelix:
+  Jumper:
     trainer_type: ppo
     max_steps: 5.0e7
     time_horizon: 64
