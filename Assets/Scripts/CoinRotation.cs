@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class CoinRotation : MonoBehaviour
 {
-    public float speed = 5f;
-    public GameObject coin;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed = 10f;
 
     // Update is called once per frame
     void Update()
     {
-        coin.transform.Rotate(Vector3.up * speed * Time.deltaTime);
+        transform.Rotate(Vector3.up * speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Jumper"))
+        {
+            Debug.Log("Collided with car");
+            Destroy(gameObject);
+        }
     }
 }

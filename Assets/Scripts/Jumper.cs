@@ -71,7 +71,7 @@ public class Jumper : Agent
         if (collidedObj.gameObject.CompareTag("Street"))
             jumpIsReady = true;
 
-        else if (collidedObj.gameObject.CompareTag("Mover"))
+        else if (collidedObj.gameObject.CompareTag("CarTag"))
         {
             Debug.Log("Crashed: No Reward");
             AddReward(-1.0f);
