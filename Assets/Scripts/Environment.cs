@@ -11,9 +11,8 @@ public class Environment : MonoBehaviour
 
     private void OnEnable()
     {
-        scoreBoard = GameObject.Find("ScoreText").GetComponent<TextMesh>();
-        //jumperGuy = transform.GetComponentInChildren<Jumper>();
-        jumperGuy = GameObject.Find("JumperGuy").GetComponent<Jumper>();
+        scoreBoard = transform.GetComponentInChildren<TextMesh>();
+        jumperGuy = transform.GetComponentInChildren<Jumper>();
     }
 
     // Update is called once per frame

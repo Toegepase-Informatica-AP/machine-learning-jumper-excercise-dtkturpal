@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1606506283",
+        "python_version": "3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\dtktu\\.conda\\envs\\unity_vr\\Scripts\\mlagents-learn Jumper-01.yml --run-id Jumper06",
+        "mlagents_version": "0.20.0",
+        "mlagents_envs_version": "0.20.0",
+        "communication_protocol_version": "1.1.0",
+        "tensorflow_version": "2.3.1",
+        "numpy_version": "1.18.5",
+        "end_time_seconds": "1606506292"
+    },
+    "total": 9.147307699999999,
+    "count": 1,
+    "self": 0.19775049999999972,
+    "children": {
+        "run_training.setup": {
+            "total": 0.00566040000000001,
+            "count": 1,
+            "self": 0.00566040000000001
+        },
+        "TrainerController.start_learning": {
+            "total": 8.9438968,
+            "count": 1,
+            "self": 0.00036929999999912866,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 8.9432112,
+                    "count": 1,
+                    "self": 8.9432112
+                },
+                "trainer_threads": {
+                    "total": 8.999999998593466e-07,
+                    "count": 1,
+                    "self": 8.999999998593466e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 0.0003153999999998547,
+                    "count": 1,
+                    "self": 0.0003153999999998547
+                }
+            }
+        }
+    }
+}
