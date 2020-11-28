@@ -10,7 +10,7 @@ De Jumper agent is niet zo slim en blijft op de weg stilstaan om het laatste ber
 
 ![](./Images/getting-hit-agent.gif)
 ## Het einddoel :
-De bedoeling hierbij is om de Jumper agent uit zijn eigen fouten te laten leren. Indien de training goed verloopt zal de agent omhoog springen om de auto te ontwijken (__!!!probeer dit niet thuis!!!__).
+De bedoeling hierbij is om de Jumper agent uit zijn eigen fouten te laten leren. Indien de training goed verloopt, zal de agent omhoog springen om de auto te ontwijken (__!!!probeer dit niet thuis!!!__).
 
 ![](./Images/agent-avoiding-accident-2.gif)
 ## Project structuur ziet er als volgt uit :
