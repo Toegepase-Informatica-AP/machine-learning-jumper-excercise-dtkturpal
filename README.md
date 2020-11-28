@@ -7,6 +7,7 @@ In dit project zult u stapsgewijs begeleid worden om zelf ML-Agents op te zetten
 
 ## Probleem omschrijving :
 De Jumper agent is niet zo slim en blijft op de weg stilstaan om het laatste berichtje uit te typen en wordt aangereden door een auto.
+
 ![](./Images/getting-hit-agent.gif)
 ## Het einddoel :
 De bedoeling hierbij is om de Jumper agent uit zijn eigen fouten te laten leren. Indien de training goed verloopt zal de agent omhoog springen om de auto te ontwijken (__!!!probeer dit niet thuis!!!__).
