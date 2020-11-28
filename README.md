@@ -28,7 +28,7 @@ Scene
 ## Prerequisites :
 ### ML-Agents installeren via de Package Manager
 1. Creëer een lege project
-2. Installeer ML-Agents (hierbij is het belangrijk dat men de volgende versie kiest: version 1.0.5)
+2. Installeer ML-Agents (hierbij is het belangrijk dat men de volgende versie kiest : 1.0.5)
 
 ![](./Images/package-manager.png)
 
