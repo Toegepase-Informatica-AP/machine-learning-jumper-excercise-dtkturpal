@@ -200,9 +200,6 @@ public class Jumper : Agent
     }
 }
 ```
-<<<<<<< Updated upstream
-## Verder aan te vullen....
-=======
 ## Stap 4 : Maak een gameObject aan en noem deze "ScoreText"
 Dit game object zal fungeren als het scorebord van de Jumper oefening, en zal hierbij het cumulative reward weergeven.
 ```c#
@@ -342,7 +339,6 @@ tensorboard --logdir results
 Hier verkrijgt men een overzicht van de resultaten.
 
 <img src="./Images/tensorboard.png" width="500">
->>>>>>> Stashed changes
 
 ## Bronvermelding
 Dapper Dino (2020-06-16), “How To Create Your Own Flappy Bird AI - Unity Ml-Agents”. Opgehaald van https://www.youtube.com/watch?v=ToMCmHQocSA&t=928s
