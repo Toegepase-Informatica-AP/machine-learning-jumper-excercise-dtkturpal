@@ -73,7 +73,7 @@ public class Jumper : Agent
 
         else if (collidedObj.gameObject.CompareTag("CarTag"))
         {
-            Debug.Log("Crashed: No Reward");
+            Debug.Log("Crashed: Reward diminished");
             AddReward(-1.0f);
             EndEpisode();
         }

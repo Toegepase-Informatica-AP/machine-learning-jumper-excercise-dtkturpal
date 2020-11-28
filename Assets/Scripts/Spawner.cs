@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Header("Instellingen")]
-    [SerializeField] private List<GameObject> spawnableObjects;
+    [SerializeField] private GameObject spawnableObject;
     [SerializeField] private float minSpawnIntervalInSeconds;
     [SerializeField] private float maxSpawnIntervalInSeconds;
 
@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        var spawned = Instantiate(GetRandomSpawnableFromList(), transform.position, transform.rotation, transform);
+        var spawned = Instantiate(spawnableObject, transform.position, transform.rotation, transform);
         spawnedObjects.Add(spawned);
 
         yield return new WaitForSeconds(Random.Range(minSpawnIntervalInSeconds, maxSpawnIntervalInSeconds));
@@ -40,11 +40,6 @@ public class Spawner : MonoBehaviour
             Destroy(spawnedObjects[i]);
             spawnedObjects.RemoveAt(i);
         }
-    }
-    private GameObject GetRandomSpawnableFromList()
-    {
-        int randomIndex = UnityEngine.Random.Range(0, spawnableObjects.Count);
-        return spawnableObjects[randomIndex];
     }
 
     public void RemoveOldCars()
