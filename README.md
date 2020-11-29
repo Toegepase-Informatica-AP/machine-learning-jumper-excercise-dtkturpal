@@ -338,7 +338,10 @@ tensorboard --logdir results
 ```
 Hier verkrijgt men een overzicht van de resultaten.
 
-<img src="./Images/tensorboard.png" width="500">
+<img src="./Images/tensorboard-results-1.png" width="1000">
+
+<img src="./Images/tensorboard-results-1.2.png" width="1000">
+
 
 ## Bronvermelding
 Dapper Dino (2020-06-16), “How To Create Your Own Flappy Bird AI - Unity Ml-Agents”. Opgehaald van https://www.youtube.com/watch?v=ToMCmHQocSA&t=928s
